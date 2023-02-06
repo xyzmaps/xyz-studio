@@ -1,0 +1,140 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import "../../../style/mixin.scss";
+
+.wrapper {
+  margin: 0 0 rem(15) 0;
+
+  &:last-child {
+      margin-bottom: 0;
+  }
+
+  &:hover {
+      .icons {
+        opacity: 1;
+      }
+  }
+
+  &.empty {
+    .description {
+      color: var(--color-white-60);
+      font-style: italic;
+    }
+  }
+
+  &.disabled {
+
+    .container {
+      cursor: not-allowed;
+
+      span {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.container {
+  padding: rem(14);
+  background: var(--color-white-10);
+  cursor: pointer;
+  hyphens: auto;
+  position: relative;
+
+  .text, .inputfield {
+    margin: 0 rem(30) 0 0;
+    padding: 0;
+    font-size: rem(14);
+    word-break: break-word;
+    white-space: pre-wrap;
+  }
+
+  .description {
+    border-radius: 1px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    .text {
+      color: var(--color-white-80);
+      display: block;
+    }
+  }
+
+  .edit {
+    position: relative;
+
+    .backdrop {
+      @include fill();
+      position: fixed;
+      z-index: 1;
+    }
+
+    .inputfield {
+      width: calc(100% - 30px);
+      height: auto;
+      color: var(--color-white);
+      font-family: var(--font-base);
+      background: none;
+      border: none;
+      display: block;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      hyphens: auto;
+
+      &::selection {
+        background: rgba(68,204,196, 0.4);
+      }
+    }
+  }
+
+  .srollbarFix {
+    top: 0;
+  }
+
+  .icons {
+    position: absolute;
+    right: rem(7);
+    opacity: 0;
+    transition: opacity .2s;
+
+    .editIcon, .trashIcon {
+      width: rem(16);
+      height: rem(16);
+      margin: 0 0 0 rem(5);
+      display: inline-block;
+      cursor: pointer;
+
+      svg {
+        fill: var(--color-white);
+      }
+
+      &:hover {
+        svg {
+          fill: var(--color-white-70);
+        }
+      }
+    }
+  }
+}

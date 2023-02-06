@@ -1,0 +1,91 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+.container {
+  width: 100%;
+  max-height: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+
+  font-size: var(--font-size-medium);
+  transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
+
+  &.success {
+    background: var(--color-green);
+  }
+
+  &.error {
+    background: var(--color-red);
+  }
+
+  .msgBtn {
+    display: flex;
+    align-items: center;
+    flex: 0.95;
+  }
+
+  .msgBtn,
+  .closeBtn {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  p {
+    font-size: rem(16);
+    color: var(--color-white);
+  }
+
+  .closeBtn {
+    width: 30px;
+    height: 30px;
+    font-size: rem(18);
+    color: var(--color-white);
+    background: none;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .btn {
+    min-width: 8rem;
+    padding: rem(8) rem(16);
+    margin-left: rem(16);
+    border-width: 0.5px;
+  }
+
+  &.expand {
+    max-height: 200px;
+    padding: rem(8) rem(16);
+    transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
+
+    .msgBtn,
+    .closeBtn {
+      opacity: 1;
+      transition-delay: 0.3s;
+    }
+  }
+}

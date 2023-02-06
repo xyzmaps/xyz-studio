@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="lui-icon-camping-ondark-solid-large"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48"
+	 enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	<g id="lui-icon-camping-ondark-solid-large-bounding-box" opacity="0">
+		<path fill="#212121" d="M47,1v46H1V1H47 M48,0H0v48h48V0L48,0z"/>
+	</g>
+	<path fill="#FFFFFF" d="M43.4659,38.6121l-6.5252-10.2536c-1.1737-1.8488-3.1033-4.887-4.2772-6.7358l-6.5252-10.2536
+		C25.5518,10.4397,24.7759,9.98,24,9.98s-1.5518,0.4597-2.1385,1.3891l-6.5251,10.2536c-1.1739,1.8488-3.1035,4.887-4.2772,6.7358
+		L4.5341,38.6121C3.3604,40.4609,4.1861,41.98,6.3743,41.98h13.647l2.1088-3.308l2.3672-3.7276l2.3376-3.6776
+		c1.1737-1.8489,3.1033-1.8489,4.2769,0l2.3376,3.6776l2.3672,3.7276l2.1088,3.308h3.7002
+		C43.8139,41.98,44.6396,40.4609,43.4659,38.6121z"/>
+	<g>
+		<rect x="2" y="44" fill="#FFFFFF" width="44" height="2"/>
+	</g>
+	<polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="21,2 24,6 27,2 	"/>
+</g>
+</svg>

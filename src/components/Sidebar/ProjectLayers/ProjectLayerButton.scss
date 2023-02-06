@@ -1,0 +1,212 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../../style/mixin.scss';
+
+.layerButton {
+  padding: rem(12) rem(15) rem(12) rem(30);
+  font-size: var(--font-size-regular);
+  background: var(--color-darkblue-30);
+  margin-bottom: 1px;
+  transition: background .1s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+
+  &:hover {
+    &:not(.disabled) {
+      background: var(--color-darkblue);
+    }
+
+    .layerControls li {
+      opacity: 1;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    .layerLabel {
+      opacity: 1;
+    }
+
+    .vsInfo {
+      opacity: 0;
+    }
+
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--color-green);
+    transform: translateX(-100%);
+    transition: transform .2s;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    opacity: .2;
+    left: rem(10);
+    top: rem(15);
+    transform: translate(0, -50%);
+    box-shadow: 6px 0 0 0 white, 0 7px 0 0 white, 6px 7px 0 0 white, 6px 14px 0 0 white, 0 14px 0 0 white;
+  }
+
+  &.active {
+    background: var(--color-darkblue);
+    transform: translateX(0);
+  }
+
+  &.active:before {
+    transform: translateX(0);
+  }
+
+  &.disabled {
+    cursor: default;
+  }
+
+  &.base {
+    margin-top: rem(10);
+    svg {
+      margin-left: rem(5);
+      fill: currentColor;
+    }
+  }
+}
+
+.layerControls {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  z-index: 2;
+  li {
+    opacity: 0;
+    padding: 0 3px;
+    cursor: pointer;
+    transition: opacity .2s;
+    &.iconSelected {
+      opacity: .2 !important;
+      display: block !important;
+    }
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+  }
+}
+
+.layerLabel {
+  width: 80%;
+  display: flex;
+  opacity: 0.8;
+
+  > span {
+    padding-right: rem(20);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .disabled & span {
+    opacity: .2;
+  }
+}
+
+.layerLabelDisabled {
+  opacity: 0.2;
+}
+
+.layerButtonNameEdit {
+  position: relative;
+  z-index: 3;
+  .layerButtonNameEditBackdrop {
+    @include fill();
+    position: fixed;
+    background: rgba(0,0,0,.3);
+    z-index: 0;
+  }
+
+  input {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    font-size: var(--font-size-regular);
+    font-family: var(--font-base);
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    z-index: 1;
+    color: #fff;
+    display: block;
+    padding-left: 0;
+    &::selection {
+      background: rgba(68,204,196,.4);
+    }
+  }
+}
+
+
+.disabledInfo {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  margin-right: 7px;
+  transition: opacity .2s;
+  &:hover {
+    opacity: .7;
+  }
+  svg {
+    margin-top: 1px;
+    fill: var(--color-red);
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.greenTitle {
+  color: var(--color-green);
+}
+
+.vsInfo {
+  opacity: 1;
+  font-size: 9px;
+  color: var(--color-green);
+  border-radius: 3px;
+  padding: 3px;
+  margin-right: 5px;
+}

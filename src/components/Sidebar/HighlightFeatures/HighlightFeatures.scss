@@ -1,0 +1,253 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import "../../../style/mixin.scss";
+
+.wrapper {
+  height: calc(100vh - 130px) !important;
+  margin-top: rem(10);
+  position: relative;
+
+    .containerHeader {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: rem(20);
+
+        span {
+            font-size: var(--font-size-jumbo);
+        }
+
+        button {
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: var(--color-green);
+            font-size: rem(13);
+            cursor: pointer;
+        }
+    }
+
+    .containerSubheader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .filterResult {
+        font-size: rem(13);
+        font-style: italic;
+        margin: rem(5) 0 rem(10) 0;
+      }
+    }
+
+    .filter {
+      animation: slide-up 0.4s ease;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 30px;
+        right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.03);
+        display: block;
+      }
+      &:before {
+        content: 'and';
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+        text-transform: uppercase;
+        display: inline-block;
+        bottom: -26px;
+        color: var(--color-white-40);
+        padding-left: 2px;
+      }
+      &:last-of-type {
+        &:after,&:before {
+          display: none;
+        }
+      }
+
+        padding: rem(15) rem(10);
+        margin-bottom: rem(40);
+        background: var(--color-darkblue-30);
+        position: relative;
+
+       > div:last-of-type {
+          margin-bottom: 0;
+      }
+
+        > div {
+            margin-bottom: rem(20);
+
+            > div:first-of-type {
+              margin-bottom: rem(5);
+            }
+        }
+
+        > div:first-of-type {
+          margin-bottom: rem(15);
+        }
+
+      .filterNote {
+          display: inline-block;
+          color: var(--color-white-60);
+          margin-top: rem(10);
+          font-size: rem(13);
+      }
+    }
+
+    .inputText {
+        height: 40px;
+        margin:0;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        border: none;
+        background: rgb(54, 58, 66);
+        border: 1px solid var(--color-darkblue-60);
+        padding: 0 rem(12);
+        font-size: rem(16);
+        color: var(--color-white);
+        &.inputTextError {
+          border: 1px solid var(--color-red);
+        }
+        &[disabled] {
+          opacity: .4;
+          cursor: default;
+        }
+
+        &::placeholder {
+          font-style: italic;
+        }
+      }
+
+      .addFilter {
+        color: var(--color-green);
+        font-size: rem(13);
+        margin: rem(5) 0 rem(10) 0;
+        text-align: right;
+        cursor: pointer;
+
+        svg {
+          fill: currentColor;
+          width: 10px;
+          height: 10px;
+        }
+    }
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 0;
+
+  .button {
+    width: 100%;
+  }
+
+  .button:first-of-type {
+    color: var(--color-darkblue-80);
+    margin-bottom: rem(15);
+  }
+}
+
+  .filterHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .rulesBoxTrash {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      svg {
+        width: 15px;
+        height: 15px;
+        fill: var(--color-white);
+      }
+      &:hover {
+        svg {
+          opacity: .4;
+        }
+      }
+    }
+
+  }
+
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000b3;
+    z-index: 999;
+
+
+    &:after,
+    &:before {
+      content: '';
+      width: 50px;
+      height: 50px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      transform: translate(-50%,-50%);
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDgwIDgwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0JFQzhEMjt9PC9zdHlsZT48Zz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDAsMTFsLTYsMjlsNiwyOWw2LTI5TDQwLDExeiBNNDAsNDNjLTEuNywwLTMtMS4zLTMtM3MxLjMtMywzLTNzMywxLjMsMywzUzQxLjcsNDMsNDAsNDN6Ii8+PC9nPjwvc3ZnPg==");
+      background-repeat: no-repeat;
+      background-position: center center;
+      animation: needle 3s ease-in-out infinite;
+    }
+
+    &:before {
+      border: 2px solid #BEC8D2;
+      border-radius: 50%;
+      animation: none;
+      background: none;
+    };
+  }
+
+  @keyframes needle {
+    0%,
+    100% {
+      transform: translate(-50%,-50%) rotate(30deg);
+    }
+
+    50% {
+      transform: translate(-50%,-50%) rotate(60deg);
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

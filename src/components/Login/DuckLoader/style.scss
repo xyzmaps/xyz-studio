@@ -1,0 +1,171 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../../style/mixin.scss';
+
+.loaderContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+
+  .staticBg {
+    width: 100%;
+    margin-bottom: 6px;
+    position: relative;
+    animation: staticBgAnim 3s forwards linear;
+    animation-iteration-count: infinite;
+  }
+
+  .balloonString {
+    position: absolute;
+    bottom: 84%;
+    right: 45%;
+    z-index: -1;
+
+    @include breakpoint($max-lg) {
+      bottom: 0;
+      right: 46%;
+    }
+  }
+
+  .balloonStringWrap {
+    position: relative;
+    animation: balloonAnim 3s forwards linear;
+    animation-iteration-count: infinite;
+    transform: rotate(0.5deg);
+  }
+
+  .balloon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: black;
+    background-color: white;
+    bottom: 100%;
+    width: 300px;
+    right: -146px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 3px 16px -15px var(--color-black-75);
+
+    @include breakpoint($max-lg) {
+      bottom: 70%;
+    }
+
+    @include breakpoint($max-xlg) {
+      bottom: 80%;
+    }
+  }
+
+  .balloonContent {
+    width: 80%;
+    position: relative;
+    color: var(--color-mirage-80);
+    line-height: 24px;
+    text-align: center;
+    font-size: rem(16);
+  }
+
+  .balloonTitle {
+    margin: rem(10) 0;
+    color: var(--color-darkgreen);
+    line-height: 20px;
+    font-size: rem(18);
+  }
+
+  .cloud {
+    width: 60%;
+    position: absolute;
+    top: -71px;
+    left: 82%;
+    animation: cloudAnim 3s forwards linear;
+    animation-iteration-count: infinite;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@keyframes staticBgAnim {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes balloonAnim {
+  0% {
+    transform: rotate(0.5deg);
+  }
+
+  25% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-0.5deg);
+  }
+
+  75% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(0.5deg);
+  }
+}
+
+@keyframes cloudAnim {
+  0% {
+    transform: translateX(-10px);
+  }
+
+  25% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  75% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-10px);
+  }
+}

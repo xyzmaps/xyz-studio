@@ -1,0 +1,261 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+@import '../../style/common.scss';
+
+.wrapper{
+  background: #F3F3F4;
+}
+
+.content {
+padding: rem(20);
+min-height: calc(100vh - 121px);
+
+    .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    > div .pageTitle {
+        color : #333942;
+        font-weight: 300;
+        font-family: var(--font-base);
+        font-size: 20px;
+        margin-left: rem(40);
+        }
+    }
+
+    .graphContainer{
+        margin-top: 15px;
+        background: var(--color-white);
+        //  height: calc(100vh - 100px);
+        width: 100%;
+        color: gray;
+        border-radius: 3px;
+
+        > div {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 20px;
+            width: 50%;
+            // height: 290px;
+
+            &:first-child {
+                border-right: 1px solid rgba(216,216,216,0.7);
+            }
+        }
+
+        .noGraphData {
+            display: flex;
+            height: 250px;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .planListContainer {
+        margin-top: 35px;
+
+        .header {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 0 0 0 20px;
+
+            > div {
+                color: #9B9DA2;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 10px;
+
+                &:nth-child(1) {
+                    width: 41%;
+                    padding-left: 45px;
+                }
+
+                &:nth-child(2) {
+                    width: 15%;
+                }
+
+                &:nth-child(3) {
+                    width: 12%;
+                }
+
+                &:nth-child(4) {
+                    width: 12%;
+                }
+
+                &:nth-child(5) {
+                    width: 20%;
+                    height: 40px;
+                    border: 1px solid #CBCCCF;
+                    border-radius: 2px;
+                    background-color: #FFF;
+                    padding-left: 15px;
+                }
+            }
+        }
+
+        .plan {
+            display: flex;
+            height: 102px;;
+            background-color: #fff;
+            margin-bottom: 15px;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px 0 #D8D8D8;
+            // border-left: 4px solid #3E94B6;
+            padding: 26px 0 26px 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #eaeaea;
+
+                .infoIcon {
+                    color: #eaeaea;
+                }
+            }
+
+            > div {
+                color: #9B9DA2;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 10px;
+
+                &:nth-child(1) {
+                    width: 41%;
+                    padding: 0;
+                }
+
+                &:nth-child(2) {
+                    width: 15%;
+                    color: #000;
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+
+                &:nth-child(3) {
+                    width: 12%;
+                    color: #000;
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+
+                &:nth-child(4) {
+                    width: 12%;
+                    color: #000;
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+
+                &:nth-child(5) {
+                    width: 20%;
+                    position: relative;
+                    padding-left: 0;
+                }
+            }
+
+            .infoIcon {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                text-align: center;
+                color: #fff;
+                background-color: green;
+                display: inline-block;
+                vertical-align: top;
+                font-size: 20px;
+                margin-right: 15px;
+                margin-top: 10px;
+            }
+
+            .noColor {
+                background-color: transparent;
+            }
+
+            .red {
+                background-color: #C41A31;
+            }
+
+            .green {
+                background-color: #00BD7D;
+            }
+
+            .cross {
+                background-color: #C41A31;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .planDetails {
+                display: inline-block;
+                vertical-align: middle;
+                color: #000;
+                font-weight: 400;
+                line-height: 20px;
+                width: calc(100% - 40px);
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 10px;
+
+                .planName {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+                .planDate {
+                    color: #9B9DA2;
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
+
+            .appID{
+                // height: auto;
+                // width: 100%;
+                color: #3F454D;
+                font-weight: 500;
+                // padding: rem(20) rem(60);
+                font-size: 13px;
+                // text-align: right;
+            }
+
+            .dot{
+                height: rem(10);
+                width: rem(10);
+                border-radius: 50%;
+                background: var(--color-midgreen);
+                display: inline-block;
+                margin-right: 5px;
+
+            }
+
+
+        }
+    }
+
+}

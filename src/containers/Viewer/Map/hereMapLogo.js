@@ -1,0 +1,24 @@
+/*
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+export const hereMapLogo =
+  'data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3OC45NCA3NS4zMSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiNmZmY7fS5jbHMtM3tmaWxsOiM0OGRhZDA7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5VbnRpdGxlZC0xPC90aXRsZT48cmVjdCBjbGFzcz0iY2xzLTEiIHdpZHRoPSI3OC45NCIgaGVpZ2h0PSI3NS4zMSIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTUwLjA5LDM4LjJsMy41NC0zLjYzTDQ5LjgsMzAuNjZjLTMuMTEtMy4xOS0yLjItNC44OC0xLjQ4LTUuNjFhNS45Myw1LjkzLDAsMCwxLDEuMjMtMSw5LjA3LDkuMDcsMCwwLDAsMS43MSwyLjM3YzMuNzEsMy44Myw3Ljc2LDMuMywxMC44Ny4wOWExMS42NywxMS42NywwLDAsMCwzLTQuNTNMNjIsMjAuMjVhMTIuNzQsMTIuNzQsMCwwLDEtMi4xOSwzLjIyYy0xLjY4LDEuNzUtMy4yOSwxLjc1LTQuMzcuODVsNi4zNy02LjQ5LS44LS44MmMtMy43NC0zLjg2LTcuMjItNC4wNy0xMC4zNi0uODVhNi41Miw2LjUyLDAsMCwwLTEuNDYsNy4xNmwtMi4zNC0yLjg0YTQuMjcsNC4yNywwLDAsMC0xLjA4Ljg4LDUuMjcsNS4yNywwLDAsMC0xLjIsNC41OUw0MywyNC41N2wtMy4xMSwzLjE5LDQuMjgsNC4zOWMtMy40LTIuODctNi40NS0yLjcyLTkuMjcuMTdzLTIuNjgsNi40OS0uMzEsOS40N2wtLjQtLjQxYy0yLjU0LTIuNi01LTMuMTYtNy40Mi0uNjRhNC43MSw0LjcxLDAsMCwwLTEuNTEsNC4xbC02LTYuMTEtMy40OSwzLjU3TDI3LjM5LDU0LjJoNy4wOGwtNC44OC01Yy0xLjcxLTEuNzMtMi4yMy0yLjkyLTEuMTctNCwuNzctLjgyLDEuNjYtLjc5LDIuNzQuMzJMMzcsNTEuNTZsMy41NC0zLjYzLTQuNC00LjVjMy40OCwzLDcuMjgsMi4yMiwxMC4xNi0uNzZhMTIuNTcsMTIuNTcsMCwwLDAsMi43NC0zLjg5TDQ2LDM3YTE0LjA4LDE0LjA4LDAsMCwxLTEuODgsMi42M2MtMS43MSwxLjc1LTMuMzEsMS43NS00LjM5Ljg1TDQ2LDM0Wm0tMTIuNjIuMjlhMi40NSwyLjQ1LDAsMCwxLDAtMy41MSwyLjM0LDIuMzQsMCwwLDEsMy40NSwwWk01My4yNSwyMi4zMmEyLjQ1LDIuNDUsMCwwLDEsMC0zLjUxLDIuMzEsMi4zMSwwLDAsMSwzLjQzLDBaIi8+PHBvbHlnb24gaWQ9Im9yaWciIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSIxMy44MSA1NC4yIDEzLjgxIDU0LjIgMjAuOTIgNjEuNDggMjguMDIgNTQuMiAyOC4wMiA1NC4yIDEzLjgxIDU0LjIiLz48L3N2Zz4=';

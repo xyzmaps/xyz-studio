@@ -1,0 +1,12 @@
+language: node_js
+sudo: required
+os:
+- linux
+node_js:
+- '8'
+script:
+# build
+- npm install
+- npm run-script build
+# test
+# deploy

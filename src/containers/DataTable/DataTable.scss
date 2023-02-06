@@ -1,0 +1,397 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+@value searchIconColor: var(--color-darkblue);
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 0 rem(20);
+  background: var(--color-whitegray);
+  overflow: scroll;
+  color: var(--color-black);
+
+  .add,
+  .delete {
+    pointer-events: none;
+  }
+
+  .add {
+    opacity: 0.3;
+  }
+
+  .delete {
+    opacity: 0.1;
+  }
+
+  &.richUI {
+    .add,
+    .delete,
+    .search {
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    .delete {
+      button {
+        opacity: 0.5;
+      }
+
+      &:hover {
+        button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  :global {
+    .ReactTable .rt-table {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+
+    .ReactTable .rt-tr {
+      position: relative;
+    }
+
+    .ReactTable .rt-resizer {
+      width: 14px;
+      right: -7px;
+    }
+
+    /* header */
+    .ReactTable .rt-thead.-header {
+      border-bottom: 1px solid var(--color-white);
+      box-shadow: none;
+    }
+
+    .ReactTable .rt-thead {
+      background: var(--color-darkblue-5);
+    }
+
+    .ReactTable .rt-thead .rt-tr {
+      text-align: left;
+    }
+
+    .ReactTable .rt-thead .rt-th,
+    .ReactTable .rt-thead .rt-td {
+      border-right: 1px solid var(--color-white-20);
+    }
+
+    .ReactTable .rt-thead .rt-th.delete {
+      padding: 0;
+    }
+
+    .ReactTable .rt-thead .rt-th {
+      padding: 10px 30px;
+      color: var(--color-darkblue-60);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .ReactTable .rt-thead .rt-th.disabled-edit {
+      color: var(--color-darkblue-30);
+    }
+
+    .ReactTable .rt-thead .rt-th.disabled-edit .toggle-card {
+      display: none;
+    }
+
+    .ReactTable .rt-thead .rt-resizable-header:last-child {
+      overflow: visible;
+    }
+
+    .ReactTable .rt-thead .rt-resizable-header-content .-label {
+      margin: 0 15px 0 0;
+    }
+
+    .ReactTable .rt-thead .rt-th.-sort-asc,
+    .ReactTable .rt-thead .rt-td.-sort-asc,
+    .ReactTable .rt-thead .rt-th.-sort-desc,
+    .ReactTable .rt-thead .rt-td.-sort-desc {
+      color: var(--color-darkblue);
+    }
+
+    .ReactTable .rt-thead .rt-th.-sort-asc,
+    .ReactTable .rt-thead .rt-td.-sort-asc {
+      box-shadow: inset 0 3px 0 0 var(--color-darkgreen);
+    }
+
+    .ReactTable .rt-thead .rt-th.-sort-desc,
+    .ReactTable .rt-thead .rt-td.-sort-desc {
+      box-shadow: inset 0 -3px 0 0 var(--color-darkgreen);
+    }
+
+    /* body */
+    /* group */
+    .ReactTable .rt-tbody .rt-tr-group {
+      height: 50px;
+      border-bottom: 1px solid var(--color-white);
+      flex: none;
+      overflow: hidden;
+    }
+
+    /* tr */
+    .ReactTable .rt-tbody .rt-tr.-odd {
+      background: var(--color-darkblue-3);
+    }
+
+    .ReactTable .rt-tbody .rt-tr.-even {
+      background: var(--color-darkblue-5);
+    }
+
+    .ReactTable .rt-tbody .rt-tr:hover {
+      background: var(--color-lightgray-1);
+    }
+
+    .ReactTable .rt-tbody .rt-tr.selected {
+      background: var(--color-midgray-1);
+    }
+
+    /* td */
+    .ReactTable .rt-tbody .rt-td {
+      height: 50px;
+      padding: 0;
+      color: var(--color-darkblue-80);
+      font-size: 16px;
+      font-weight: 400;
+      border-right: 1px solid var(--color-white-20);
+    }
+
+    .ReactTable .rt-tbody .rt-td > div {
+      min-height: 50px;
+      padding: 15px 30px;
+      background: transition;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      caret-color: var(--color-darkgreen);
+      transition: 0.2s color, 0.2s background;
+    }
+
+    .ReactTable .rt-tbody .rt-td > div::after {
+      content: '\a0';
+      display: inline-block;
+    }
+
+    .ReactTable .rt-tbody .rt-td > div.selected {
+      color: var(--color-darkblue);
+      background: var(--color-white);
+    }
+  }
+}
+
+.disableSearch {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.header {
+  padding: rem(20) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    font-style: italic;
+
+    .info {
+      font-size: rem(14);
+      color: var(--color-cod-gray-70);
+      font-style: italic;
+
+      strong {
+        font-weight: 600;
+      }
+
+      span {
+        opacity: 0.8;
+      }
+    }
+
+    .sub {
+      color: var(--color-darkgray);
+      font-size: rem(12);
+      padding-top: rem(2);
+    }
+  }
+
+  .headerAction {
+    display: flex;
+    align-items: center;
+  }
+
+  .searchInput {
+    width: 210px;
+    height: 30px;
+    padding-left: rem(25);
+    background: var(--color-midgray);
+    border: 0.5px solid var(--color-darkgray);
+    color: var(--color-darkblue);
+    font-size: rem(14);
+  }
+
+  .searchIcon {
+    width: 0.8em;
+    height: 0.8em;
+  }
+
+  .addBtn {
+    margin-left: rem(8);
+    background: transparent;
+    color: var(--color-green);
+    font-size: rem(14);
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-darkgreen);
+    }
+
+    &:active {
+      color: var(--color-darkgreen);
+    }
+  }
+}
+
+.table {
+  height: calc(100vh - 180px);
+  margin-bottom: rem(16);
+  color: var(--color-black);
+  border: none;
+  overflow: hidden;
+  clear: both;
+}
+
+.delete {
+  width: 0;
+  height: 0;
+  display: block;
+  overflow: hidden;
+
+  button {
+    width: 26px;
+    height: 50px;
+    padding: 10px 5px;
+    font-size: 13px;
+    background: transparent;
+    border: none;
+    display: block;
+    cursor: pointer;
+    transition: right 0.3s;
+    transition: 0.2s opacity;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.pagination {
+  margin: rem(20) 0 rem(30);
+  text-align: center;
+  font-size: rem(14);
+  display: block;
+
+  li {
+    margin: 0 rem(4);
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  a {
+    width: rem(36);
+    height: rem(36);
+    line-height: rem(34);
+    color: var(--color-darkgreen);
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-green);
+    }
+  }
+
+  .selected {
+    a {
+      color: var(--color-white);
+      background: var(--color-darkgreen);
+      cursor: default;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .next,
+  .previous {
+    &.disabled {
+      opacity: 0.3;
+
+      span:hover {
+        color: var(--color-darkgreen);
+        border: 1px solid var(--color-darkgreen);
+        cursor: auto;
+      }
+    }
+
+    span {
+      width: auto;
+      padding: 0 rem(20);
+      color: var(--color-darkgreen);
+      border: 1px solid var(--color-darkgreen);
+      border-radius: 0;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-green);
+        border: 1px solid var(--color-green);
+      }
+    }
+  }
+
+  .resetBtn {
+    border: 0;
+    background: transparent;
+  }
+
+  .previous {
+    margin-right: rem(20);
+  }
+
+  .next {
+    margin-left: rem(20);
+  }
+}
+
+.exceptionMsg {
+  color: var(--color-cod-gray-70);
+  margin-top: rem(20);
+  text-align: center;
+}

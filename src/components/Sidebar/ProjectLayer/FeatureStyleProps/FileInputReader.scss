@@ -1,0 +1,82 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../../../style/mixin.scss';
+
+.wrapper {
+  cursor: pointer;
+  position: relative;
+}
+.inputWrapper {
+  display: flex;
+}
+.previewImage {
+  width: rem(40);
+  height: rem(40);
+  position: relative;
+  margin-right: 10px;
+  background: var(--color-darkblue-30);
+  border: 1px solid var(--color-darkblue);
+  img {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    objcet-fit: contain;
+    objcet-position: center;
+    border: none;
+    display: block;
+  }
+}
+
+.inputFile {
+  input {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+  }
+  .inputFileBtn {
+    background: var(--color-green);
+    border: 1px solid var(--color-darkblue);
+    color: var(--color-darkblue);
+    font-size: var(--font-size-small);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    padding: 0 20px;
+  }
+}
+
+.inputError {
+  color: red;
+  display: block;
+  font-size: var(--font-size-small);
+  padding: rem(10) 0;
+}

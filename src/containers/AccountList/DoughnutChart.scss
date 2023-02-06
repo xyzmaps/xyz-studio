@@ -1,0 +1,83 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+@import '../../style/common.scss';
+
+.chartTitle {
+    text-align: left;
+    font-size: 21px;
+    font-weight: bold;
+    color: #6c7178;
+    margin: 0 0 25px 0;
+}
+
+.chartInfo {
+    display: none;
+    margin-left: 20px;
+    vertical-align: top;
+
+    li {
+        margin-bottom: 20px;
+        text-align: left;
+
+        span {
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+            vertical-align: middle;
+            background-color: #8080803d;
+            border: 2px solid gray;
+            margin-right: 5px;
+        }
+    }
+}
+
+.leftSide {
+    text-align: right;
+
+    .leftSideInfo {
+        display: inline-block;
+    }
+}
+
+.rightSide {
+
+    .rightSideInfo {
+        display: inline-block;
+    }
+}
+
+:global {
+    .donutchart-innertext {
+        display: none;
+    }
+
+    .selected.donutchart-arcs-path {
+        opacity: 1;
+    }
+
+    .donutchart {
+        display: inline-block;
+        margin: 0 20px;
+    }
+}

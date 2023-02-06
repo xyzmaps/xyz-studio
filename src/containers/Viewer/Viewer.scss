@@ -1,0 +1,102 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import "../../style/mixin.scss";
+
+.spinner {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 4rem;
+  min-height: 4rem;
+  z-index: 1000000;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  &:after,
+  &:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDgwIDgwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0JFQzhEMjt9PC9zdHlsZT48Zz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDAsMTFsLTYsMjlsNiwyOWw2LTI5TDQwLDExeiBNNDAsNDNjLTEuNywwLTMtMS4zLTMtM3MxLjMtMywzLTNzMywxLjMsMywzUzQxLjcsNDMsNDAsNDN6Ii8+PC9nPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: needle 3s ease-in-out infinite;
+  }
+
+  &:before {
+    border: 2px solid #bec8d2;
+    border-radius: 50%;
+    animation: none;
+    background: none;
+  }
+}
+
+@keyframes needle {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(30deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(60deg);
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background: var(--color-darkblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.msg {
+  color: var(--color-white);
+  text-align: center;
+  font-size: rem(36);
+  position: relative;
+  z-index: 1;
+
+  strong,
+  span {
+    display: block;
+  }
+
+  strong {
+    margin: 0 0 rem(10);
+    color: var(--color-red);
+    font-size: rem(32);
+  }
+
+  span {
+    font-size: rem(22);
+  }
+}

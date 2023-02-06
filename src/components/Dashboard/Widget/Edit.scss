@@ -1,0 +1,112 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../../style/mixin.scss';
+
+.edit {
+  text-align: right;
+  position: absolute;
+  z-index: 1;
+
+  &:hover {
+    .trigger {
+      color: var(--color-white-70);
+    }
+  }
+  &:active {
+    .trigger {
+      color: var(--color-white-80);
+    }
+  }
+  &.show {
+    color: var(--color-gray);
+    z-index: 2;
+
+    .trigger {
+      color: var(--color-white-70);
+    }
+
+    .container {
+      display: block;
+    }
+  }
+
+  &.card {
+    top: rem(3);
+    right: rem(1);
+  }
+
+  &.list {
+    top: rem(11);
+    right: rem(20);
+  }
+}
+
+.trigger {
+  padding: rem(10);
+  color: var(--color-white-60);
+  line-height: rem(6);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &::before, &::after {
+    content: "\2022";
+    display: block;
+  }
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: none;
+  position: absolute;
+  right: 0;
+
+  button, a {
+    width: 100%;
+    min-width: rem(175);
+    margin: rem(1) 0;
+    padding: rem(11);
+    color: var(--color-white-80);
+    text-align: left;
+    font-size: rem(16);
+    font-weight: 400;
+    background: var(--color-black);
+    border: none;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-white);
+      background: var(--color-lightblue);
+    }
+  }
+}
+
+.editItem {
+  display: none;
+  @include bp(desktop) {
+    display: block;
+  }
+}

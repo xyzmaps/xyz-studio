@@ -1,0 +1,194 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+.wrapper {
+  font-size: rem(11);
+  margin: rem(20) auto;
+  width: 90%;
+  position: relative;
+
+  @include bp(large) {
+    margin: rem(30) auto;
+  }
+
+  .copyIcon {
+    vertical-align: top;
+    margin-left: rem(5);
+    padding: 0;
+    display: inline-block;
+      span {
+        width: rem(16);
+        height: rem(16);
+        display: inline-block;
+        cursor: pointer;
+
+          path {
+            fill: var(--color-darkgreen);
+          }
+      }
+  }
+
+  .copied{
+    position: absolute;
+    font-size: rem(12);
+    padding: rem(8);
+    width: fit-content;
+    top: rem(-10);
+    right: rem(100);
+    color: var(--color-white);
+    border-radius: 2px;
+    background: black;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    font-weight: 300;
+
+    @include bp(large) {
+      top: rem(-35);
+      right: rem(20);
+    }
+
+    &.studio{
+      right: rem(100);
+      @include bp(large) {
+        right: rem(10);
+      }
+    }
+
+    -moz-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 2s forwards;
+
+  }
+}
+
+.title, .input {
+  @include bp(large) {
+    display: inline-block;
+  }
+}
+
+.title {
+  width: 15%;
+  color: var(--color-white);
+  font-size: rem(14);
+  font-weight: bold;
+  vertical-align: middle;
+
+  &.normal {
+    font-weight: 300;
+  }
+}
+
+.field {
+  padding: rem(6);
+  background: var(--color-lightblue);
+}
+
+.textarea {
+  min-height: rem(45);
+  width: 74%;
+  margin: rem(5) 0 0 0;
+  padding: rem(12);
+  color: var(--color-white);
+  font-size: rem(14);
+  border: rem(1) solid black;
+  background: none;
+  vertical-align: middle;
+  display: inline-block;
+  word-break: break-all;
+
+  @include bp(large) {
+    width: 80%;
+    margin: 0;
+  }
+
+   &.selected {
+    span {
+      background-color: var(--color-green);
+    }
+   }
+
+  .viewerLink{
+    color: var(--color-white);
+    text-decoration: underline;
+    font-size: rem(14);
+    font-weight: 300;
+  }
+
+  p{
+    font-size: rem(14);
+    font-weight: 300;
+  }
+}
+
+.share {
+  vertical-align: top;
+  margin: 0 rem(6);
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+
+  span{
+    width: rem(16);
+    height: rem(16);
+    display: inline-block;
+    position: absolute;
+  }
+}
+
+@keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
+}
+
+.social{
+  position: absolute;
+  top: rem(20);
+  margin-left: rem(25);
+  display: inline-block;
+  border: rem(1) solid var(--color-black);
+  background: var(--color-lightblue);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+  z-index: 9;
+
+  @include bp(large) {
+    margin-left: 0;
+  }
+
+  animation: slide-right .3s ease-out;
+
+  @keyframes slide-right {
+    0% { opacity: 0; transform: translateX(-10%); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+}

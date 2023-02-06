@@ -1,0 +1,325 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+@import '../../style/common.scss';
+
+.wrapper {
+  background: #E7E7E8;
+  width: 100vw;
+
+  :global {
+    .ReactTable {
+      border: 1px solid transparent;
+      margin: 0 0 20px 0;
+    }
+
+    .ReactTable .rt-table {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+
+    .ReactTable .rt-tr {
+      position: relative;
+    }
+
+    .ReactTable .rt-resizer {
+      width: 14px;
+      right: -7px;
+    }
+
+    /* header */
+    .ReactTable .rt-thead.-header {
+      border-bottom: 1px solid var(--color-white);
+      box-shadow: none;
+    }
+
+    .ReactTable .rt-thead {
+      background: var(--color-darkblue-5);
+    }
+
+    .ReactTable .rt-thead .rt-tr {
+      text-align: left;
+    }
+
+    .ReactTable .rt-thead .rt-th,
+    .ReactTable .rt-thead .rt-td {
+      border-right: 1px solid #fff;
+    }
+
+    .ReactTable .rt-thead .rt-th {
+      padding: 10px 20px;
+      color: var(--color-darkblue-60);
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .ReactTable .rt-thead .rt-th.disabled-edit {
+      color: var(--color-darkblue-30);
+    }
+
+    .ReactTable .rt-thead .rt-th.disabled-edit .toggle-card {
+      display: none;
+    }
+
+    .ReactTable .rt-thead .rt-resizable-header-content .-label {
+      margin: 0 15px 0 0;
+    }
+
+    .ReactTable .rt-thead .rt-th.-sort-asc,
+    .ReactTable .rt-thead .rt-td.-sort-asc,
+    .ReactTable .rt-thead .rt-th.-sort-desc,
+    .ReactTable .rt-thead .rt-td.-sort-desc {
+      color: var(--color-darkblue);
+    }
+
+    .ReactTable .rt-thead .rt-th.-sort-asc,
+    .ReactTable .rt-thead .rt-td.-sort-asc {
+      box-shadow: inset 0 3px 0 0 var(--color-darkgreen);
+    }
+
+    .ReactTable .rt-thead .rt-th.-sort-desc,
+    .ReactTable .rt-thead .rt-td.-sort-desc {
+      box-shadow: inset 0 -3px 0 0 var(--color-darkgreen);
+    }
+
+    /* body */
+    /* group */
+    .ReactTable .rt-tbody .rt-tr-group {
+      height: 50px;
+      border-bottom: 1px solid var(--color-white);
+      flex: none;
+      overflow: hidden;
+    }
+
+    /* tr */
+    .ReactTable .rt-tbody .rt-tr.-odd {
+      background: var(--color-darkblue-3);
+    }
+
+    .ReactTable .rt-tbody .rt-tr.-even {
+      background: var(--color-darkblue-5);
+    }
+
+    .ReactTable .rt-tbody .rt-tr:hover, .ReactTable .rt-tbody .rt-tr.selected {
+      background: var(--color-darkblue-10);
+    }
+
+    /* td */
+    .ReactTable .rt-tbody .rt-td {
+      height: 50px;
+      padding: 10px 20px;
+      color: var(--color-darkblue-80);
+      font-size: 16px;
+      font-weight: 400;
+      border-right: 1px solid #fff;
+    }
+    .ReactTable .rt-noData {
+      margin-top: 50px;
+    }
+  }
+}
+
+.content {
+  padding-top: rem(35);
+
+  .header {
+    padding: 0 rem(35) rem(30) rem(35);
+
+    .subHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: rem(30);
+    }
+
+    .title{
+      color: #333942;
+      font-size: 20px;
+    }
+
+    .manage {
+      font-size: 14px;
+      color: var(--color-white-90);
+    }
+
+    .backLink {
+      color: #00B6B2;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .headerText {
+      color: #000;
+
+      .appName {
+        font-size: rem(40);
+        font-weight: bold;
+
+        span {
+          font-size: rem(25);
+          font-weight: 300;
+
+        }
+      }
+    }
+
+  }
+
+  .myPlan {
+    > span {
+      color: #333942;
+      font-weight: 300;
+      font-family: var(--font-base);
+      font-size: 15px;
+      margin-left: rem(10);
+    }
+
+    .accInfo {
+      background: var(--color-white);
+      height: calc(100vh - 227px);
+      width: 100%;
+
+      .layout {
+        height: 100%;
+        overflow: scroll;
+        padding: 0 rem(35);
+
+        .appID {
+          height: auto;
+          width: 100%;
+          color: #3F454D;
+          font-weight: 500;
+          padding: 0 0 rem(20) rem(60);
+          font-size: 14px;
+          font-family: var(--font-base);
+          text-align: right;
+        }
+
+        .dot {
+          height: rem(10);
+          width: rem(10);
+          border-radius: 50%;
+          background: var(--color-midgreen);
+          display: inline-block;
+          margin-right: 5px;
+        }
+
+        .container {
+          display: flex;
+          flex-direction: row;
+
+          .leftContainer {
+            height: 100%;
+            width: 50%;
+            padding: rem(30) rem(20) rem(20) 0;
+
+            .heading1 {
+              font-size: 24px;
+              font-weight: 500;
+              margin: 0;
+              color: #575B63;
+            }
+
+            .heading2 {
+              font-size: 18px;
+              font-weight: 500;
+              margin: 0;
+              color: #575B63;
+            }
+
+            .data {
+              font-size: 18px;
+              margin: 0;
+              color: #9B9DA2;
+            }
+
+            .date {
+              color: #000;
+              font-family: var(--font-base);
+              font-size: 24px;
+
+              .billingDate {
+                display: block;
+                line-height: normal;
+              }
+
+              .astrik {
+                color: #00AFAA;
+                font-size: 16px;
+                font-style: italic;
+              }
+
+              .astrikLink {
+                color: #00AFAA;
+                font-size: 14px;
+                font-style: italic;
+                font-weight: 300;
+                cursor: pointer;
+                text-decoration: underline;
+                border: 0;
+                background: transparent;
+              }
+
+              .astrikPlan {
+                color: #575B63;
+                font-size: rem(16);
+              }
+            }
+
+            .detail {
+              height: auto;
+              width: auto;
+              color: #9B9DA2;
+              font-family: var(--font-base);
+              font-size: 16px;
+              line-height: 1.8;
+              margin: rem(40) 0;
+            }
+          }
+
+          .rightContainer {
+            height: 100%;
+            width: 50%;
+            padding-top: rem(30);
+
+            .progressBar {
+              margin: 0 0 rem(40) 0;
+              border: 1px solid #d8d8d8;
+              padding-left: 20px;
+            }
+
+            .progressBarTitle,
+            .tableTitle {
+              color: #333942;
+              font-size: 18px;
+              margin-bottom: rem(10);
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

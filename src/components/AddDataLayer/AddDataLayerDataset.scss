@@ -1,0 +1,291 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+.wrapper {
+
+    text-align: center;
+    width: 100%;
+    color: var(--color-black);
+    position: absolute;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    padding: rem(30) 0;
+    background: var(--color-ebonyClay);
+}
+
+.content {
+    width: 75%;
+    text-align: left;
+    margin: 0 auto;
+    position: relative;
+}
+
+.description {
+    line-height: 2;
+    color: var(--color-gray);
+    font-size: var(--font-size-small);
+    text-align: center;
+
+    a {
+        color: var(--color-green);
+        transition: 0.2s opacity;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+}
+
+.whiteBg {
+    background: var(--color-white);
+    flex: 2;
+}
+
+.transparent {
+    background: transparent;
+}
+
+.cardHolder {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.card {
+    position: relative;
+    display: inline-block;
+    width: 175px;
+    padding: 50px 0;
+    background: var(--color-white);
+    margin: 0 20px;
+    text-align: center;
+    color: var(--color-white);
+    h3 {
+        font-size: rem(18);
+    }
+    p {
+        font-size: rem(12);
+    }
+}
+.card.active {
+    &::before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        width: calc(100% + 11px);
+        height: calc(100% + 11px);
+        border: 1px solid var(--color-silverChalice);
+    }
+}
+
+.msCard {
+    //background-image: url(../../assets/images/MSFT.png);
+    background-size: cover;
+    background: rgba(103, 108, 115, 0.8);
+    h3, p {
+        background: var(--color-darkblue-70);
+        padding: 5px 0;
+    }
+}
+
+.card.disabled {
+    background: rgba(103,108,115,0.8);
+    color: var(--color-whitegray);
+    border: none;
+}
+
+.filterItems {
+    text-align: center;
+    width: 100%;
+    margin-top: rem(20);
+    >div {
+        display: inline-block;
+        margin: 0 5px;
+        width: 75px;
+        div {
+            display: inline-block;
+            width: 75px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    .state {
+        //background-image: url(../../assets/images/state.png);
+    }
+    .county {
+        //background-image: url(../../assets/images/county.png);
+    }
+    .district {
+        //background-image: url(../../assets/images/district.png);
+    }
+    .city {
+        //background-image: url(../../assets/images/city.png);
+    }
+    .zipcode {
+        //background-image: url(../../assets/images/zipcode.png);
+    }
+
+}
+
+
+.inputBoxWrapper {
+    position: relative;
+
+    .inputBox {
+        position: relative;
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .searchInput {
+        display: block;
+        width: 100%;
+        max-width: 650px;
+        font-size: rem(18);
+        padding: rem(10);
+        border: rem(1) solid var(--color-midgray);
+        margin: rem(15) auto 0;
+    }
+
+
+    .close {
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+    }
+}
+
+
+
+.autoSuggesionList {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 10;
+
+    li {
+      width: 100%;
+      color: var(--color-black);
+      text-align: left;
+      font-weight: 400;
+      background: var(--color-white);
+      border: rem(1) solid var(--color-midgray);
+      display: block;
+      position: relative;
+    }
+
+    button, a, span, strong {
+      vertical-align: middle;
+    }
+
+    button {
+      width: 100%;
+      padding: rem(10);
+      color: var(--color-black);
+      text-align: left;
+      font-size: rem(18);
+      background: transparent;
+      border: none;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+
+      &:hover {
+        background: var(--color-whitegray);
+      }
+
+      strong {
+        max-width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: inline-block;
+      }
+    }
+
+    .active {
+        background: var(--color-whitegray);
+    }
+
+  }
+
+
+  .selectedList {
+      margin-top: rem(10);
+      margin-left: rem(-10);
+      contain: content;
+
+    li {
+        display: inline-block;
+        float: left;
+        background: var(--color-ebonyClay);
+        padding: rem(10) rem(15);
+        border-radius: 20px;
+        margin: rem(10);
+        font-size: rem(12);
+        color: var(--color-white);
+    }
+    .close {
+        height: 14px;
+        margin-left: 0.625rem;
+        position: relative;
+        top: 2px;
+        z-index: 1;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        padding: 0;
+
+        svg {
+            fill: var(--color-white);
+            height: 14px;
+        }
+    }
+
+  }
+
+  .clearAll {
+      margin-top: rem(10);
+      cursor: pointer;
+      text-decoration: underline;
+      border: 0;
+      background: transparent;
+  }
+
+  .footer {
+    padding: rem(20) 0 0;
+    display: flex;
+    justify-content: flex-end;
+  }

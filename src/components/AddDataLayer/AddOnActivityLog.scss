@@ -1,0 +1,263 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+.activityWrapper{
+    padding: rem(15) rem(30);
+    color: var(--color-black);
+
+    .button{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .apply{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: rem(20);
+    }
+}
+
+.autoSave{
+    padding: rem(10);
+    color: var(--color-green);
+    border: solid rem(1) var(--color-green);
+    width: fit-content;
+    margin: rem(5) auto;
+}
+
+.header {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: rem(22);
+    font-weight: 600;
+    margin-bottom: rem(20);
+
+    .subInfo{
+        font-size: rem(14);
+        font-weight: 300;
+    }
+
+    span {
+        vertical-align: middle;
+        margin-left: rem(20);
+        cursor: pointer;
+    }
+}
+
+.subHeader {
+    margin: 0 0 rem(50) 0;
+
+    .spaceMeta {
+        font-weight: 600;
+        display: block;
+        margin-bottom: rem(5);
+    }
+
+    .activityInfo {
+        font-size: rem(14);
+    }
+}
+
+.activityContent {
+    display: grid;
+    grid-template-columns: rem(130) rem(350);
+    grid-column-gap: rem(20);
+    grid-row-gap: rem(20);
+    align-items: center;
+
+    .logSpaceInfo {
+        font-size: rem(14);
+        font-style: italic;
+    }
+}
+
+.copyContainer {
+    background: var(--color-white-10);
+    hyphens: auto;
+    position: relative;
+
+    .inputfield {
+      width: rem(100);
+      height: auto;
+      color: var(--color-lightgray-2);
+      background: none;
+      border: none;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0;
+      font-size: rem(16);
+
+      &:read-only {
+        opacity: 0.7;
+      }
+      &:-moz-read-only {
+        /* For Firefox */
+        opacity: 0.7;
+      }
+    }
+
+    .copyIcon {
+        display: inline-block;
+        vertical-align: middle;
+
+      span {
+        width: rem(16);
+        height: rem(16);
+        margin: rem(5) 0 0 0;
+        display: inline-block;
+        cursor: pointer;
+
+        path {
+          fill: var(--color-lightgray-2);
+        }
+      }
+    }
+  }
+
+  .success{
+    position: absolute;
+    bottom: rem(30);
+    left: 30%;
+    border: rem(2) solid var(--color-green);
+    padding: rem(10);
+    font-size: rem(14);
+    color: var(--color-green);
+    border-radius: rem(2);
+    animation: cssAnimation 0s ease-in 3s forwards;
+  }
+
+  .error {
+    position: absolute;
+    bottom: rem(30);
+    left: 20%;
+    border: rem(2) solid var(--color-red);
+    padding: rem(10);
+    font-size: rem(14);
+    color: var(--color-red);
+    border-radius: rem(2);
+    animation: cssAnimation 0s ease-in 5s forwards;
+  }
+
+  .warning {
+    position: absolute;
+    bottom: rem(30);
+    left: 13%;
+    width: 73%;
+    line-height: rem(20);
+    border: rem(2) solid #ffbd09;
+    padding: rem(10);
+    font-size: rem(14);
+    color: #000a19cc;
+    border-radius: rem(2);
+    animation: cssAnimation 0s ease-in 5s forwards;
+  }
+
+  .loading{
+    font-weight: 700;
+    font-size: larger;
+    vertical-align: middle;
+    text-align: center;
+    min-height: rem(500);
+
+    .spinner {
+        &:after, &:before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            transform: translate(-50%,-50%);
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDgwIDgwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0JFQzhEMjt9PC9zdHlsZT48Zz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDAsMTFsLTYsMjlsNiwyOWw2LTI5TDQwLDExeiBNNDAsNDNjLTEuNywwLTMtMS4zLTMtM3MxLjMtMywzLTNzMywxLjMsMywzUzQxLjcsNDMsNDAsNDN6Ii8+PC9nPjwvc3ZnPg==);
+            background-repeat: no-repeat;
+            background-position: center center;
+            animation: needle 3s ease-in-out infinite;
+        }
+
+        &:before {
+            border: 2px solid #BEC8D2;
+            border-radius: 50%;
+            animation: none;
+            background: none;
+        };
+
+    }
+}
+
+/* Radio button css */
+
+.radioBtnContainer {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    padding: rem(10);
+    margin-right: rem(20);
+
+    &.alignButton {
+      padding-left: 43px;
+    }
+
+    .buttonName {
+        color: var(--color-lightgray-2);
+        cursor: pointer;
+        font-size: rem(14);
+    }
+
+    .radioBtn {
+      display: inline-block;
+      vertical-align: middle;
+      width: rem(22);
+      height: rem(22);
+      border-radius: 50%;
+      margin-right: rem(10);
+      background-color: var(--color-silverChalice);
+      cursor: pointer;
+      position: relative;
+      border: 0;
+
+      &:after {
+        content: "";
+        width: rem(12);
+        height: rem(12);
+        background-color: var(--color-darkblue-80);
+        border-radius: 50%;
+        display: none;
+        position: absolute;
+        top: rem(5);
+        left: rem(5);
+      }
+
+      &.selected {
+        background: var(--color-green);
+
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }

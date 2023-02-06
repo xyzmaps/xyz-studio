@@ -1,0 +1,98 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+@import '../../style/common.scss';
+
+.edit {
+  text-align: right;
+  position: absolute;
+  z-index: 1;
+
+  &.show {
+    color: var(--color-gray);
+    z-index: 2;
+
+    .trigger {
+      color: #00B6B2;
+    }
+
+    .container {
+      display: block;
+    }
+  }
+
+  &.list {
+    top: 0;
+    right: rem(10);
+  }
+}
+
+.trigger {
+  padding: rem(10);
+  color: rgba(15,22,33,0.4);
+  line-height: rem(6);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &::before, &::after {
+    content: "\2022";
+    display: block;
+  }
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: none;
+  position: absolute;
+  right: 0;
+
+  button, a {
+    width: 100%;
+    min-width: rem(175);
+    margin: rem(1) 0;
+    padding: rem(11);
+    color: rgba(15,22,33,0.8);
+    text-align: left;
+    font-size: rem(15);
+    font-weight: 400;
+    background-color: #F3F3F4;
+    border: none;
+    display: block;
+    cursor: pointer;
+  }
+
+  .disabled {
+    color: #d3d3d3;
+    cursor: default;
+  }
+}
+
+.editItem {
+  display: none;
+  @include bp(desktop) {
+    display: block;
+  }
+}

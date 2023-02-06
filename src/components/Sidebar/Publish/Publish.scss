@@ -1,0 +1,199 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../../style/mixin.scss';
+
+.wrapper{
+    background: var(--color-black);
+    padding: rem(15) rem(20);
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    font-size: rem(20);
+    color: var(--color-darkgreen);
+    font-weight: bold;
+    align-content: center;
+}
+
+.info { padding-top: rem(10); }
+
+.layerControls {
+    align-items: center;
+    display: flex;
+    z-index: 99;
+    .toggleBorder{
+      height: rem(45);
+      width: rem(45);
+      background: var(--color-darkgreen-2);
+      border-radius: rem(5);
+      align-items: center;
+      padding-top: rem(12);
+      padding-right: rem(7);
+      margin-left: rem(15);
+      div{
+          margin: 0;
+      }
+      svg{
+          width: rem(22);
+          height: rem(22);
+          margin-left: rem(12);
+      }
+    }
+    li {
+      cursor: pointer;
+    }
+    svg {
+      width: rem(16);
+      height: rem(16);
+    }
+  }
+
+.sharepanel{
+    position: fixed;
+    bottom: rem(16);
+    left: rem(285);
+    width: rem(480);
+    background: var(--color-vulcan);
+    z-index: 88;
+    animation: slide-right .3s ease-out;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+
+    .embedsection{
+        border-bottom: rem(2) solid var(--color-black);
+        padding: rem(15);
+
+        > div {
+            width: 100%;
+        }
+
+        div:first-child {
+            margin: 0 0 rem(15) 0 ;
+        }
+        div:nth-child(2) {
+            margin: 0;
+            font-weight: 200;
+        }
+
+        span {
+            margin: 0;
+        }
+        .textarea{
+            width: 80% !important;
+            padding: rem(10);
+            max-height: rem(40) !important;
+        }
+        .title{
+            height: 100% !important;
+            margin: auto 0 !important;
+        }
+    }
+
+    .social{
+        margin: rem(25) 0 rem(10) rem(80);
+        display: inline-block;
+        border: rem(2) solid var(--color-black);
+        img{
+            margin: rem(5);
+            width: rem(25);
+            height: rem(25);
+        }
+    }
+}
+
+.alertcontent{
+    display: flex;
+    justify-content: space-between;
+    padding-right: rem(60);
+
+    .headtext {
+        margin : rem(15) auto 0 auto;
+        font-weight: 300;
+        font-size: rem(12);
+        .subtext{
+            font-weight: 700;
+            margin-bottom: rem(5);
+            font-size: rem(14);
+        }
+    }
+
+    .liveWidth { width: rem(120); }
+    .closeWidth { width: rem(200); }
+}
+
+.copy{
+    position: fixed;
+    width: rem(310);
+    padding: rem(15);
+    bottom: rem(80);
+    left: rem(120);
+    color: var(--color-white);
+    border-radius: 2px;
+    background: var(--color-vulcan);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+    z-index: 9;
+
+    .link{
+        font-size: rem(13);
+        font-weight: bold;
+    }
+    .url{
+        font-size: rem(11);
+        font-weight: 200;
+        word-break: break-all;
+        margin-top: rem(5);
+    }
+
+    -moz-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 3s forwards;
+    // -webkit-animation-fill-mode: forwards;
+    // animation-fill-mode: forwards;
+  }
+
+  @keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+  }
+  @-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+  }
+
+  @keyframes slide-right {
+    0% { opacity: 0; transform: translateX(-2%); }
+  100% { opacity: 1; transform: translateX(0); }
+  }
+
+
+

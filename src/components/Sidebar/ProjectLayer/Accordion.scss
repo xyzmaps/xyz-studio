@@ -1,0 +1,210 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import "../../../style/mixin.scss";
+
+.layerAccordionWrapper {
+  margin-bottom: rem(1);
+  background: var(--color-darkblue-90);
+
+  &:hover {
+    .layerAccordionActions svg {
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  // &.nested {
+  //   background: var(--color-darkblue-50);
+  // }
+
+  .nested {
+    &:hover {
+      .layerAccordionActions svg {
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.layerAccordion {
+  padding: rem(12) rem(15);
+  font-size: var(--font-size-regular);
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+  cursor: pointer;
+
+  .nested & {
+    font-size: var(--font-size-medium);
+  }
+
+  .draggable > & {
+    padding: rem(11) rem(15);
+    padding-left: rem(30);
+    position: relative;
+    cursor: move;
+
+    &:after {
+      content: "";
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 6px 0 0 0 white, 0 6px 0 0 white, 6px 6px 0 0 white, 6px 12px 0 0 white, 0 12px 0 0 white;
+      position: absolute;
+      top: 38%;
+      left: rem(10);
+      opacity: 0.2;
+      transform: translate(0, -50%);
+    }
+  }
+
+  .iconArrow, .iconEdit, .iconGear, .iconHide {
+    transform: rotate(-90deg);
+    transition: transform 0.2s;
+
+    fill: var(--color-white);
+  }
+
+  &.active {
+    .iconArrow {
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      background: var(--color-darkblue-30);
+    }
+  }
+  &.disabled {
+    opacity: 0.1;
+  }
+
+  > div {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.layerAccordionContent {
+  padding: rem(4) rem(15) rem(15) rem(15);
+  font-size: var(--font-size-regular);
+  position: relative;
+  transition: background 0.1s;
+  // background: var(--color-darkblue-30);
+
+  .nested & {
+    padding: rem(10) rem(15);
+  }
+
+  &.geometryContent{
+    background: var(--color-lightblue-60);
+    padding: rem(10) rem(8) rem(2) rem(8);
+  }
+}
+
+.layerAccordionActions {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+
+  .iconArrow, .iconEdit, .iconGear, .iconHide {
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
+    opacity: 0;
+    transform: none !important;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+}
+
+.edit {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+
+  .backdrop {
+    @include fill();
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    z-index: 0;
+  }
+
+  input {
+    width: 100%;
+    padding: 0;
+    color: var(--color-white-80);
+    font-family: var(--font-base);
+    font-size: var(--font-size-medium);
+    font-weight: 500;
+    background: none;
+    border: none;
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    &::selection {
+      background: rgba(68,204,196,0.4);
+    }
+  }
+}
+
+.label {
+  padding: 0;
+  color: var(--color-white-80);
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.defaultLable {
+  width: 75% !important;
+}
+
+.iconSelected  {
+  .eyeOff {
+    opacity: .2;
+  }
+}
+
+.icon {
+  margin-right: rem(18);
+}
+
+.basemapIcon {
+  margin-right: rem(5);
+}
+
+.attrIcon {
+  margin-right: rem(23);
+}

@@ -1,0 +1,253 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+.virtualSpaceWrapper{
+    color: #000;
+    padding: rem(15) rem(32);
+
+    .header {
+        vertical-align: middle;
+        display: inline-block;
+        font-size: rem(22);
+        font-weight: 600;
+        margin-bottom: rem(10);
+        position: relative;
+
+        .subInfo{
+            font-size: rem(14);
+            font-weight: 300;
+        }
+
+        .infoIcon {
+            vertical-align: middle;
+            margin-left: rem(20);
+            cursor: pointer;
+        }
+    }
+
+    .intro {
+        font-size: var(--font-size-medium);
+    }
+
+
+    .row {
+        display: flex;
+        margin: rem(10) 0 0 0;
+        font-size: var(--font-size-medium);
+        align-items: baseline;
+      }
+
+      .column {
+        flex: 25% 0 1;
+        padding: 5px;
+        text-align: left;
+      }
+
+      .column:nth-of-type(even) {
+        flex: 2;
+        padding: 5px;
+        text-align: left;
+      }
+
+      .inputBoxContainer {
+        position: relative;
+        align-items: center;
+        display: flex;
+        }
+
+      .inputBox {
+        display: block;
+        width: 100%;
+        max-width: 425px;
+        font-size: var(--font-size-medium);
+        padding: rem(8);
+        border: rem(1) solid var(--color-midgray);
+      }
+
+
+      .radioBtnContainer {
+        position: relative;
+
+        span {
+          margin: 0 rem(50) 0 0;
+          color: var(--color-gray);
+          font-size: rem(14);
+        }
+        button {
+          width: rem(18);
+          height: rem(18);
+
+          &:after {
+            background-color: var(--color-white);
+            width: rem(8);
+            height: rem(8);
+          }
+        }
+
+      }
+
+      .selectBoxContainer {
+        width: 100%;
+        max-width: 425px;
+      }
+
+      .button{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0 0 0 0;
+    }
+
+    hr {
+        border: 0.5px solid rgba(15, 22, 33, 0.1);
+    }
+
+    .selectedSpacesContainer {
+        height: 100px;
+        margin-bottom: 10px;
+        overflow-y: auto;
+
+        .selectedTabs {
+            display: flex;
+            flex-wrap: wrap;
+
+            span {
+              padding: rem(10) rem(15);
+              margin: rem(10) rem(10) 0 0;
+              border: 0.0625rem solid var(--color-midgray);
+              border-radius: 20px;
+              display: flex;
+              cursor: pointer;
+
+              div {
+                  padding: 0 10px;
+              }
+
+              .close {
+                height: 14px;
+                position: relative;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                padding: 0;
+
+                svg {
+                    width: 15px;
+                    height: 15px;
+                    margin-top: 2px;
+                    }
+              }
+            }
+        }
+        .nospaces {
+            font-weight: 600;
+        }
+
+    }
+
+    .success{
+      margin-right: auto;
+      border: rem(2) solid var(--color-green);
+      padding: rem(10);
+      font-size: rem(14);
+      color: var(--color-green);
+      border-radius: rem(2);
+      animation: cssAnimation 0s ease-in 3s forwards;
+    }
+
+    .error {
+      margin-right: auto;
+      border: rem(2) solid var(--color-red);
+      padding: rem(10);
+      font-size: rem(14);
+      color: var(--color-red);
+      border-radius: rem(2);
+      animation: cssAnimation 0s ease-in 5s forwards;
+    }
+
+}
+
+.selectedSpacesContainer::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+
+.selectedSpacesContainer::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--color-lightgray-1);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .row {
+      display: flex;
+      margin: rem(-0.1) 0 0 0;
+      color: var(--color-gray);
+      font-size: var(--font-size-medium);
+      align-items: baseline;
+    }
+  }
+
+  .mapInfo {
+    width: rem(420);
+    z-index: 11;
+    display: inline-block;
+    background-color: var(--color-darkblue);
+    padding:  rem(4) rem(8) rem(8) rem(8);
+    position: absolute;
+    cursor: default;
+    margin-bottom: 10px;
+  }
+
+  .disclaimerText {
+    text-align: left;
+    font-size: rem(12);
+    margin-top: rem(5);
+    line-height: rem(16);
+    font-weight: 100;
+
+    span {
+      color: var(--color-white) !important;
+    }
+  }
+
+  .tooltipInfo {
+    position: absolute;
+    left: rem(285);
+    top: rem(0);
+
+    &:after {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid var(--color-darkblue-90);
+      position: absolute;
+      transform: rotate(-90deg);
+      top: rem(12);
+      left: rem(-10);
+    }
+  }

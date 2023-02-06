@@ -1,0 +1,168 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+.wrapper {
+  min-width: rem(92);
+  margin: 0 0 rem(20);
+  position: relative;
+
+  &.show {
+    .trigger {
+      color: var(--color-white);
+
+      svg {
+        transform: rotate(90deg) translate(-100%, 0);
+
+        rect, circle, line, polyline, polygon, path {
+          fill: var(--color-white);
+        }
+      }
+    }
+
+    .container {
+      display: block;
+    }
+  }
+}
+
+.title {
+  margin: 0 0 rem(6);
+  color: var(--color-white-60);
+  font-size: rem(13);
+  font-weight: 500;
+}
+
+.trigger {
+  width: 100%;
+  padding: rem(12) rem(10);
+  color: var(--color-white);
+  font-size: rem(12);
+  text-align: left;
+  background: var(--color-darkblue);
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+
+  &:hover {
+    background: var(--color-darkblue-50);
+  }
+
+  span, svg {
+    vertical-align: baseline;
+  }
+
+  span {
+    max-width: 100%;
+    margin: 0 rem(15) 0 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+  }
+
+  svg {
+    position: absolute;
+    right: rem(10);
+    top: 50%;
+    transform: rotate(-90deg) translate(100%, 0);
+
+    rect, circle, line, polyline, polygon, path {
+      fill: var(--color-gray);
+      transition: fill 0.3s;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  height: rem(111);
+  margin: 0;
+  padding: 0;
+  font-size: rem(11);
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+
+  ul {
+    border-bottom: rem(1) solid var(--color-lightblue);
+  }
+
+  li {
+    width: 100%;
+    color: var(--color-white);
+    text-align: left;
+    font-weight: 400;
+    background: var(--color-darkblue);
+    border-top: rem(1) solid var(--color-lightblue);
+    display: block;
+    position: relative;
+  }
+
+  button, a, span, strong {
+    vertical-align: middle;
+  }
+
+  button {
+    width: 100%;
+    padding: rem(10);
+    color: var(--color-white);
+    text-align: left;
+    background: transparent;
+    border: none;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+
+    &:hover {
+      background: var(--color-lightblue-50);
+    }
+
+    strong {
+      max-width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: inline-block;
+    }
+  }
+}
+
+.disclaimerText {
+  color: rgba(255,255,255,.4);
+  font-size: var(--font-size-xsmall);
+  font-style: italic;
+  margin-top: rem(5);
+}
+
+a {
+  color: var(--color-green);
+  transition: 0.2s opacity;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

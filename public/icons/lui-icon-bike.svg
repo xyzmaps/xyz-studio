@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="lui-icon-bike-ondark-solid-large"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48"
+	 enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	<g id="lui-icon-bike-ondark-solid-large-bounding-box" opacity="0">
+		<path fill="#FFFFFF" d="M47,1v46H1V1H47 M48,0H0v48h48V0L48,0z"/>
+	</g>
+	<path fill="#FFFFFF" d="M35.36,18.9299l-14.34,5.47c-0.29,0.1101-0.59,0.1602-0.89,0.1602c-0.35,0-0.7-0.0701-1.03-0.22
+		c-0.61-0.28-1.08-0.78-1.31-1.4001L15.39,17h2.16l2.1,5.21c0.0699,0.1899,0.2,0.27,0.27,0.3c0.08,0.04,0.22,0.0801,0.39,0.02
+		l14.33-5.46L35.36,18.9299z"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="37,23.08 33.1087,12 28,12 	"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M11,23.3587c-3.6619,0-6.6413,2.9794-6.6413,6.6413
+		S7.3381,36.6413,11,36.6413S17.6413,33.6619,17.6413,30S14.6619,23.3587,11,23.3587z"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M38.1413,23.359
+		c-3.6619,0-6.6413,2.9794-6.6413,6.6413s2.9794,6.6413,6.6413,6.6413s6.6413-2.9794,6.6413-6.6413S41.8032,23.359,38.1413,23.359z"
+		/>
+	<rect x="10" y="13" fill="#FFFFFF" width="9" height="2"/>
+</g>
+</svg>

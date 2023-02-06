@@ -1,0 +1,141 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import "../../../style/mixin.scss";
+
+.wrapper {
+  margin: 0 0 rem(30) 0;
+
+  &:hover {
+    .heading {
+      .icons {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.empty {
+    .description {
+      color: var(--color-white-60);
+      font-style: italic;
+    }
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 0;
+
+  .title {
+    color: var(--color-gray);
+    font-size: rem(12);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .icons {
+    float: right;
+    opacity: 0;
+    transition: opacity .2s;
+
+    .editIcon, .trashIcon {
+      width: rem(16);
+      height: rem(16);
+      margin: 0 0 0 rem(5);
+      display: inline-block;
+      cursor: pointer;
+
+      svg {
+        fill: var(--color-white);
+      }
+
+      &:hover {
+        svg {
+          fill: var(--color-white-70);
+        }
+      }
+    }
+  }
+}
+
+.container {
+  margin: rem(14) 0;
+  padding: rem(14);
+  background: var(--color-white-10);
+  cursor: pointer;
+  hyphens: auto;
+
+  .text, textarea {
+    margin: 0 rem(14) 0 0;
+    padding: 0;
+    font-size: rem(14);
+    word-break: break-word;
+    white-space: pre-wrap;
+  }
+
+  .description {
+    border-radius: 1px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    .text {
+      color: var(--color-white-80);
+      display: block;
+    }
+  }
+
+  .edit {
+    position: relative;
+
+    .backdrop {
+      @include fill();
+      position: fixed;
+      z-index: 1;
+    }
+
+    textarea {
+      width: calc(100% - 14px);
+      height: auto;
+      color: var(--color-white);
+      font-family: var(--font-base);
+      background: none;
+      border: none;
+      display: block;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      resize: none;
+      hyphens: auto;
+
+      &::selection {
+        background: rgba(68,204,196, 0.4);
+      }
+    }
+  }
+
+  .srollbarFix {
+    top: 0;
+  }
+}

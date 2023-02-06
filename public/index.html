@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0F1621" />
+    <!--    <link rel="shortcut icon" href="https://www.here.com/sites/all/themes/herecorporate/build/favicon.ico" type="image/x-icon; charset=binary">-->
+    <!--    <link rel="apple-touch-icon" href="https://www.here.com/sites/all/themes/herecorporate/build/img/icons/favicon-96x96.png">-->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://account.here.com/js/sdk/sso.min.js"></script>
+    <script>
+      window.PUBLIC_URL = '%PUBLIC_URL%';
+    </script>
+    <title>HERE Studio | HERE</title>
+    <style>
+      #root {
+        height: 100%;
+      }
+    </style>
+    <!-- Google Tag Manager -->
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','%REACT_APP_GTM_CODE%');</script> -->
+    <!-- End Google Tag Manager -->
+
+    <!-- Omniture -->
+    <script type="text/javascript">
+      var nkT = {
+        pName: 'HERE Studio | HERE', //Populate with the page Title. For example "Homepage",
+        sCountry: 'Global', //Site country parameter. We will leave this fixed to "Global" in this implementation.
+        sLang: 'en', // Site language parameter. We will leave this fixed to "en" in this implementation
+      };
+    </script>
+    <script src="//tags.tiqcdn.com/utag/here/herexyzstudio/prod/utag.js"></script>
+    <!-- End Omniture -->
+
+    <script
+      async
+      src="//cdn.embedly.com/widgets/platform.js"
+      charset="UTF-8"
+    ></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

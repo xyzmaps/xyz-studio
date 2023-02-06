@@ -1,0 +1,36 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# Analyze bundle size
+/analyze
+
+# misc
+.DS_Store
+
+.env.development.local
+.env.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+
+# Automated Tests output files 
+.vscode
+/e2e_tests/cypress_studio_tests/node_modules
+/e2e_tests/cypress_studio_tests/cypress/screenshots
+*__diff_output__*
+/e2e_tests/cypress_studio_tests/cypress/videos
+/e2e_tests/cypress_studio_tests/cypress/videos/*
+e2e_tests/cypress_studio_tests/mochawesome-report/
+.idea

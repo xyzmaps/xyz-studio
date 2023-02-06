@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.8 50.8">
+  <defs>
+    <style>.cls-1{fill:#fff;stroke:#00908a;stroke-miterlimit:10;}.cls-2{fill:#00908a;}</style>
+  </defs>
+  <title>Asset 14</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <circle class="cls-1" cx="25.4" cy="25.4" r="24.9"/>
+      <circle class="cls-2" cx="13.73" cy="27.7" r="3.93"/>
+      <circle class="cls-2" cx="30.63" cy="12.16" r="3.93"/>
+      <circle class="cls-2" cx="35.66" cy="34.51" r="3.93"/>
+      <polygon class="cls-2"
+               points="35.4 35.33 12.05 28.08 30.05 11.53 31.22 12.79 15.42 27.32 35.91 33.68 35.4 35.33"/>
+    </g>
+  </g>
+</svg>

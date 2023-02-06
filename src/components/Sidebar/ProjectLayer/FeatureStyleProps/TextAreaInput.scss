@@ -1,0 +1,130 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../../../style/mixin.scss';
+
+.edittextarea {
+  .backdrop {
+    @include fill();
+    position: fixed;
+    z-index: 1;
+  }
+
+  textarea {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.inputTextArea {
+    height: auto;
+    margin:0;
+    padding: 0;
+    width: calc(100% - 5px);
+    margin: 0;
+    border: none;
+    background: var(--color-bluegray);
+    border: 1px solid var(--color-darkblue-60);
+    padding: rem(9) rem(12);
+    font-size: rem(16);
+    color: var(--color-white-60);
+    font-family: var(--font-base);
+    resize: none;
+    hyphens: auto;
+    font-size: 1rem;
+    &.inputTextError {
+      border: 1px solid var(--color-red) !important;
+    }
+    &[disabled] {
+      opacity: .4;
+      cursor: default;
+    }
+    &::selection {
+      background: rgba(68,204,196, 0.4);
+    }
+  }
+.textareaContainer {
+    position: relative;
+
+    .description {
+      padding: rem(10);
+      height: rem(42);
+      background: var(--color-bluegray);
+      border: 1px solid var(--color-darkblue-60);
+      cursor: pointer;
+      hyphens: auto;
+      border-radius: 1px;
+      display: block;
+      overflow: hidden;
+      position: relative;
+
+      .text {
+        width: calc(100% - 40px);
+        color: var(--color-white-60);;
+        display: block;
+        white-space: pre-wrap;
+      }
+    }
+    .noedit {
+      cursor: default;
+    }
+  }
+
+  .container {
+    .disabled {
+      cursor: default;
+      opacity: .3;
+    }
+  }
+
+  .editIcon,.ruleIcon {
+    position: absolute;
+    right: rem(20);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  .ruleIcon {
+    position: absolute !important;
+    right: rem(40);
+  }
+
+  .textareaContainer:hover {
+    .editIcon,
+    .ruleIcon {
+      opacity: 1;
+
+      &:hover {
+        opacity: .6;
+      }
+    }
+  }
+

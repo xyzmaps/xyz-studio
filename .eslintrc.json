@@ -1,0 +1,66 @@
+{
+  "parser": "babel-eslint",
+
+  "extends": ["airbnb", "prettier"],
+
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+
+  "plugins": ["react", "prettier"],
+
+  "rules": {
+    "prettier/prettier": ["error"],
+    "linebreak-style": ["error", "unix"],
+    "semi": ["error", "always"],
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "camelcase": 0,
+    "import/no-cycle": 0,
+    "import/prefer-default-export": 0,
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "no-restricted-syntax": 0,
+    "no-restricted-globals": 0,
+    "guard-for-in": 0,
+    "no-console": ["error", { "allow": ["warn", "info"] }],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "__REDUX_DEVTOOLS_EXTENSION__",
+          "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"
+        ]
+      }
+    ],
+
+    "jsx-a11y/no-autofocus": 0,
+
+    "react/destructuring-assignment": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/no-string-refs": 0,
+    "react/prop-types": 0,
+    "react/sort-comp": [
+      2,
+      {
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "everything-else",
+          "render"
+        ]
+      }
+    ]
+  }
+}

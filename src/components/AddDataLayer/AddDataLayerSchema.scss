@@ -1,0 +1,176 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+.tabWrapper{
+    background: #1A2035;
+    height: rem(44);
+    border-radius: rem(22);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 rem(6);
+    align-items: center;
+    width: fit-content;
+    margin: rem(5) 0;
+
+    .tabInput{
+        height: rem(32);
+        border-radius: rem(16);
+        padding: rem(5) rem(16);
+        color: var(--color-white-80);
+        cursor: pointer;
+
+        &.selected {
+            background: rgba(73,76,106,0.7);
+        }
+    }
+}
+
+.dropzone {
+    //margin: auto;
+    border: none;
+    height: rem(269);
+    width: rem(600);
+
+    > div{
+        padding: 5%;
+    }
+  }
+
+  .schemaFile {
+    height: rem(259);
+    width: rem(600);
+    padding: 6%;
+    text-align: center;
+    border: rem(4) dashed var(--color-darkgray);
+    font-size: x-large;
+
+    span{
+        display: inline-block;
+        margin-top: rem(40);
+    }
+  }
+
+.fileName{
+    padding: rem(25);
+    background: var(--color-midgray);
+    text-align: center;
+    color: var(--color-black);
+    font-size: var(--font-size-big);
+}
+
+.schemaWrapper{
+    padding: rem(5) rem(30);
+    color: var(--color-black);
+
+    .inputSchema{
+        margin: rem(15) 0;
+    }
+
+    input{
+        background: none;
+        border: 1px solid var(--color-bluegray);
+        width: rem(650);
+        height: 45px;
+        padding: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    textarea{
+      height: rem(250);
+      width: rem(650);
+      padding: rem(15);
+      background: none;
+      resize: none;
+      hyphens: auto;
+    }
+
+    .button{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .apply{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .download{
+        color: var(--color-green);
+        transition: 0.2s opacity;
+        cursor: pointer;
+        font-size: small;
+
+        &:hover {
+            opacity: 0.8;
+          }
+    }
+}
+
+.error {
+    position: fixed;
+    bottom: rem(30);
+    left: 28%;
+    border: rem(2) solid var(--color-red);
+    padding: rem(10);
+    font-size: rem(14);
+    color: var(--color-red);
+    border-radius: rem(2);
+    animation: cssAnimation 0s ease-in 5s forwards;
+
+    &.existing{
+        bottom: rem(90);
+        left: 50%;
+    }
+  }
+
+.autoSave{
+    padding: rem(10);
+    color: var(--color-green);
+    border: solid rem(1) var(--color-green);
+    width: fit-content;
+    margin: rem(5) auto;
+}
+
+.header {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: rem(22);
+    font-weight: 600;
+    margin-bottom: rem(10);
+
+    .subInfo{
+        font-size: rem(14);
+        font-weight: 300;
+    }
+
+    span {
+        vertical-align: middle;
+        margin-left: rem(20);
+        cursor: pointer;
+    }
+}

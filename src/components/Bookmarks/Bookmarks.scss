@@ -1,0 +1,209 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../style/mixin.scss';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.addWrapper {
+  margin-right: rem(10);
+  display: flex;
+  align-items: center;
+  background: var(--color-darkblue);
+  height: rem(40);
+  border-radius: 2px;
+  position: relative;
+}
+
+.addInput {
+  background: none;
+  border: none;
+  height: 100%;
+  padding: 0;
+  width: rem(160);
+  font-size: var(--font-size-medium);
+  color: #fff;
+}
+
+.addBookmark {
+  display: block;
+  padding: 0 rem(10);
+  cursor: pointer;
+  position: relative;
+  svg {
+    width: 21px;
+    height: 21px;
+    position: relative;
+    top: 3px;
+    fill: #fff;
+  }
+}
+
+.searchBox {
+  position: relative;
+  padding-right: rem(10);
+  height: rem(40);
+  background: var(--color-darkblue);
+  border-radius: 1px;
+
+  &.active {
+    .searchBoxInput {
+      svg {
+        stroke: var(--color-white);
+      }
+
+      input {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+.searchBoxInput {
+  position: relative;
+
+  label,
+  input {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  label {
+    display: block;
+  }
+
+  svg {
+    width: rem(13);
+    height: rem(13);
+    stroke: var(--color-white-60);
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  input {
+    margin: 0;
+    padding: 0 0 0 rem(40);
+    color: var(--color-white-60);
+    font-size: rem(16);
+    line-height: rem(39);
+    background: transparent;
+    border: none;
+    transition: background 0.2s;
+
+    &::placeholder {
+      font-style: italic;
+    }
+  }
+}
+
+.searchResults {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  margin-top: 1px;
+  height: 280px;
+}
+
+.searchResultItem {
+  display: block;
+  padding: 10px;
+  background: var(--color-darkblue);
+  margin-bottom: 1px;
+  cursor: pointer;
+  position: relative;
+  padding-right: rem(35);
+  z-index: 4;
+  color: rgba(255, 255, 255, 0.8);
+
+  > span {
+    display: flex;
+
+    svg {
+      fill: #fff;
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      margin-top: 2px;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    opacity: 0;
+    transition: opacity 0.2s;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 1px;
+    background: var(--color-green);
+    position: absolute;
+  }
+
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+
+    &:before {
+      opacity: 1;
+    }
+
+    .searchResultsDelete {
+      opacity: 1;
+    }
+  }
+}
+
+.searchResultsBackdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: 3;
+}
+
+.searchResultsDelete {
+  width: rem(16);
+  height: rem(16);
+  position: absolute;
+  right: rem(10);
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s;
+  opacity: 0;
+
+  svg {
+    transition: opacity 0.2s;
+    fill: #fff;
+  }
+
+  &:hover svg {
+    opacity: 0.7;
+  }
+}

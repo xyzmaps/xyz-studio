@@ -1,0 +1,70 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../../../style/mixin.scss';
+:global {
+  .input-range {
+    &__label {
+      display: none;
+    }
+    &__track {
+      height: 10px;
+      left: rem(5);
+      right: rem(5);
+      border-radius:6px;
+      margin-top: -5px;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAChJREFUeNpiPHPmDAMMGBsbw9lMDDgA6RKM%2F%2F%2F%2Fh3POnj1LCzsAAgwAQtYIcFfEyzkAAAAASUVORK5CYII%3D');
+      &--active {
+        background: none;
+      }
+      &--background:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: -2px;
+        height: 100%;
+        background: linear-gradient(to right, rgba(15,22,33,0) 0%,rgba(15,22,33,1) 99%);
+        border-radius:6px;
+      }
+    }
+    &__slider {
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+      // border: 2px solid #fff;
+      // background: rgba(72,218,208,1);
+      // background: var(--color-darkblue);
+      border: none;
+      background: #fff;
+      box-shadow: 1px 1px 3px 3px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+  }
+  .slider-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+

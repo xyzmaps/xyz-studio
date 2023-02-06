@@ -1,0 +1,214 @@
+/*!
+ *
+ *   Copyright (C) 2017-2019 HERE Europe B.V.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   SPDX-License-Identifier: Apache-2.0
+ *   License-Filename: LICENSE
+ *
+ *
+ */
+
+@import '../../../style/mixin.scss';
+
+.baseButton {
+  margin-top: rem(12);
+
+  > div:first-child {
+    background: var(--color-white-10) ;
+
+    > div:first-child {
+      padding-left: rem(5);
+    }
+  }
+}
+
+.baseButtonSwatches {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .switcherContent {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 2px;
+    height: 4.3rem;
+    width: 43.8%;
+    margin: 0.35rem 0.32rem;
+    padding: 1px;
+    position: relative;
+    cursor: pointer;
+
+    &.active {
+      border: 1px solid;
+      border-color: var(--color-green);
+      cursor: default;
+      width: 43.8%;
+      margin: 0.35rem 0.32rem;
+
+    }
+  }
+}
+
+.tileLayerContainer {
+  padding: 0 rem(10);
+}
+
+.separator {
+  padding: 0 rem(10);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
+  margin: 0 0.625rem;
+}
+
+.showLabelWrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-white-80);
+  padding: rem(15) rem(10) rem(20) rem(10);
+
+  span {
+    color: var(--color-white-80);
+    font-size: var(--font-size-medium);
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  div {
+    margin: 0;
+  }
+}
+
+.mapImg{
+  width: 98.4%;
+  height: 65px;
+  position: absolute;
+  border-radius: 2px;
+}
+
+.switcherLabel {
+  margin: 0.2rem;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+  background-color: var(--color-darkblue);
+  box-sizing: border-box;
+  color: var(--color-white);
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  padding: 0.2rem;
+  opacity: 0;
+  position: absolute;
+  text-align: left;
+  word-wrap: break-word;
+  z-index: 3;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  border-radius: 2px;
+  font-size: 0.7rem;
+}
+
+.switcherContent:hover .switcherLabel {
+  opacity: 0.8;
+}
+
+.title {
+  padding: rem(20) 0;
+  color: var(--color-white-80);
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+}
+
+.mainContainer {
+  display: inline-block;
+  width: 50%;
+  position: relative;
+  padding: 0 0 0.47rem;
+  cursor: pointer;
+
+  .span {
+    text-transform: capitalize;
+  }
+
+  .radioBtnContainer {
+    margin: 0 0 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .info {
+    width: rem(15);
+    height: rem(15);
+    text-align: center;
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 50%;
+    color: gray;
+    font-size: rem(12);
+    font-weight: 500;
+    margin-left: rem(20);
+    margin-bottom: rem(2);
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .mapInfo {
+    width: rem(193);
+    z-index: 11;
+    display: inline-block;
+    background-color: var(--color-darkblue);
+    padding:  rem(4) rem(8) rem(8) rem(8);
+    position: absolute;
+    left: rem(-38);
+    top: rem(31);
+    cursor: default;
+    margin-bottom: 10px;
+  }
+
+  .disclaimerText {
+    color: var(--color-white);
+    text-align: left;
+    font-size: rem(12);
+    margin-top: rem(5);
+    line-height: rem(15);
+  }
+
+  a {
+    color: var(--color-green);
+    transition: 0.2s opacity;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .tilezenMap {
+
+    &:after {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid var(--color-darkblue-90);
+      position: absolute;
+      top: rem(-7);
+      left: rem(141);
+    }
+  }
+}
